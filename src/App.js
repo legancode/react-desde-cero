@@ -1,6 +1,34 @@
 import React from 'react';
 import "./styles/styles.scss"
 import Curso from './curso'
+
+const cursos = [
+  {
+    title: 'React desde Cero',
+    image: 'https://drupal.ed.team/sites/default/files/imagenes-cdn-edteam/2019-04/React%20desde%20cero%20%281%29.png',
+    price: 30,
+    profesor: 'Beto Quiroga'
+  },
+  {
+    title: 'Drupal desde cero',
+    image: "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/drupal-poster-720_3.jpg?itok=e93ErhMN",
+    price: 30,
+    profesor: 'Beto Quiroga'
+
+  },
+  {
+    title: 'GO desde cero',
+    image: "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/go_0.jpg?itok=k2amLhrN",
+    price: 40,
+    profesor: 'Alexys Lozada'
+  },
+  {
+    title: 'HTML desde cero',
+    image: "https://drupal.ed.team/sites/default/files/styles/medium/public/courses/images/HTML-2018.jpg?itok=Gyvm-W9t",
+    price: 10,
+    profesor: 'Alvaro Felipe'
+  }
+]
 // Solo un elemento en el retorno ()
 const App = () => (
   <>
@@ -18,14 +46,9 @@ const App = () => (
       </div>
     </div>
     <div className="ed-grid m-grid-3">
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
-      <Curso />
+      {
+        cursos.map(curso => <Curso title={curso.title} image={curso.image} price={curso.price} profesor={curso.profesor} />)
+      }
     </div>
   </>
 )
